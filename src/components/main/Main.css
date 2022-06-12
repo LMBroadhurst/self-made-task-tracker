@@ -4,3 +4,46 @@ main {
         padding: 1rem;
         margin: 2rem 0rem;
 }
+
+.toDoCompleted {
+    display: flex;
+    flex-wrap: row nowrap;
+    justify-content: space-around;
+    font-size: 2rem;
+}
+
+.toDoCompleted > h3 {
+    background-color: lightgoldenrodyellow;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0rem;
+}
+
+.dummyTask {
+    padding: 1rem 2rem;
+    margin: 1rem 0rem;
+    border-radius: 0.5rem;
+    background-color: rgb(255, 185, 157);
+    font-size: 2rem;
+
+    display: flex;
+    flex-wrap: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dummyTask > div > button {
+    margin: 1rem;
+    font-size: 2.5rem;
+    border: 0px;
+    background-color: transparent;
+}
+
+.dummyTask > div > p {
+    padding: 0.5rem 0rem;
+}
+
+.dummyTask > div > p + p + p, .dummyTask > div > p + p  {
+    font-size: 1.6rem;
+}
+
