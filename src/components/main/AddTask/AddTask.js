@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./AddTask.css";
 
 const AddTask = ({ onAdd }) => {
 
@@ -45,7 +46,7 @@ const AddTask = ({ onAdd }) => {
       </div>
 
       <div className='form-control'>
-        <label>Day & Time</label>
+        <label>Date</label>
         <input
           type='text'
           placeholder='Add date'
@@ -55,16 +56,16 @@ const AddTask = ({ onAdd }) => {
       </div>
 
       <div className='form-control form-control-check'>
-        <label>Set Reminder</label>
+        <label>Priority</label>
         <input
-          type='checkbox'
-          checked={priority}
+          type='text'
+          placeholder="Priority"
           value={priority}
-          onChange={(e) => setPriority(e.currentTarget.checked)}
+          onChange={(e) => setPriority(e.currentTarget.value)}
         />
       </div>
 
-      <input type='submit' value='Save Task' className='btn btn-block' />
+      <input type='submit' value='✅' className='btn' />
     </form>
   )
 
