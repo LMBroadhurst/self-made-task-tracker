@@ -1,0 +1,10 @@
+nav > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-between;
+}
+
+nav > ul > li {
+    padding: 0rem 2.5rem;
+}

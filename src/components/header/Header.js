@@ -1,11 +1,17 @@
-import Navbar from "./navbar/Navbar"
+import Navbar from "./navbar/Navbar";
+import "./Header.css";
 
 const Header = () => {
   return (
     <header>
-        <h1>Task Tracker</h1>
-        <Navbar />
-        <h2>The best task tracker on the interwebs!</h2>
+        <div>
+            <div>
+                <h1>Task Tracker</h1>
+                <h2>The best task tracker on the interwebs!</h2>
+            </div>
+
+            <Navbar />
+        </div>
     </header>
   )
 }

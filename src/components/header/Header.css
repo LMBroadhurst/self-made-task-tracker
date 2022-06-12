@@ -1,0 +1,21 @@
+header > div {
+    border-radius: 1rem;
+}
+
+header > div {
+    display: flex;
+    flex-wrap: row wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 3rem;
+
+    padding: 1rem;
+
+    background-color: lightblue;
+}
+
+h1 + h2 {
+    font-size: 2rem;
+}
+
