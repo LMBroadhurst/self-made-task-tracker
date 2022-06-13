@@ -62,7 +62,7 @@ const AddTask = ( {onAdd, setParentTasksToDo} ) => {
       <div className='form-control'>
         <label>Date</label>
         <input
-          type='text'
+          type='date'
           placeholder='Add date'
           value={date}
           onChange={(e) => setDate(e.target.value)}
@@ -70,13 +70,26 @@ const AddTask = ( {onAdd, setParentTasksToDo} ) => {
       </div>
 
       <div className='form-control form-control-check'>
-        <label>Priority</label>
-        <input
-          type='text'
+        <label htmlFor="priorities">Priority</label>
+
+        {/* Code below is if box is preferred */}
+
+        {/* <input type="select"
           placeholder="Priority"
           value={priority}
           onChange={(e) => setPriority(e.currentTarget.value)}
-        />
+        /> */}
+
+        <select id="priorities"
+        value={priority}
+        onChange={(e) => setPriority(e.currentTarget.value)}
+        >
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+          
+
       </div>
 
       <input type='submit' value='✅' className='btn'
