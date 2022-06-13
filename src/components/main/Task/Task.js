@@ -1,29 +1,16 @@
-import { useState } from "react";
-import "../Main.js";
+import "../Main.js"
 
-const Task = ({ task, onDelete, setParentTasksToDo, setParentTasksCompleted }) => {
-
-    const [tasksToDo, setTasksToDo] = useState(0);
-    const [tasksCompleted, setTasksCompleted] = useState(0);
+const Task = ({ task, onDelete }) => {
 
     const taskCompletedClick = () => {
 
         onDelete(task.id)
-
-        setTasksCompleted(tasksCompleted + 1);
-        setParentTasksCompleted(tasksCompleted);
-        console.log(tasksCompleted);
-
 
     }
 
     const clickXonTask = () => {
 
         onDelete(task.id)
-
-        setTasksToDo(tasksToDo - 1);
-        setParentTasksToDo(tasksToDo);
-        console.log(tasksToDo);
 
     };
 

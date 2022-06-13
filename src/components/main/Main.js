@@ -26,10 +26,10 @@ const Main = () => {
 
     // Easier Stuff
 
-    const [parentTasksCompleted, setParentTasksCompleted] = useState(0);
     const [parentTasksToDo, setParentTasksToDo] = useState(0);
+    const [parentTasksCompleted, setParentTasksCompleted] = useState(0);
     
-    
+
     // const completedTaskUpdateCounter = () => {
     //     setParentTasksCompleted(parentTasksCompleted + 1);
     // };

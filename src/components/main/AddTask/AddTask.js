@@ -8,15 +8,16 @@ const AddTask = ( {onAdd, setParentTasksToDo} ) => {
   const [text, setText] = useState('');
   const [date, setDate] = useState('');
   const [priority, setPriority] = useState('');
-  const [tasksToDo, setTasksToDo] = useState(0);
+  const [tasksToDo, setTasksToDo] = useState(1);
 
-  const taskToDoUpdateCounter = () => {
+  const addTaskSuccessfully = () => {
 
     if (text && date && priority) {
       setTasksToDo(tasksToDo + 1);
       setParentTasksToDo(tasksToDo);
       console.log(tasksToDo);
     }
+
 };
 
     
@@ -97,7 +98,7 @@ const AddTask = ( {onAdd, setParentTasksToDo} ) => {
       </div>
 
       <input type='submit' value='✅' className='btn'
-      onClick={ taskToDoUpdateCounter }/>
+      onClick={ addTaskSuccessfully }/>
     </form>
   )
 
