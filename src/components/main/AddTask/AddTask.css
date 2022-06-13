@@ -24,6 +24,8 @@ form {
 
 .btn {
     font-size: 2.5rem;
+    padding: 0 0.5rem;
     border: 0px;
-    background-color: transparent;
+    background-color: lightgoldenrodyellow;
+    border-radius: 1rem;
 }
