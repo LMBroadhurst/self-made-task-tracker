@@ -6,7 +6,7 @@ const Header = () => {
     <header>
         <div>
             <div>
-                <h1>Task Tracker</h1>
+                <h1 id="h1">Task Tracker</h1>
                 <h2>The best task tracker on the interwebs!</h2>
             </div>
 

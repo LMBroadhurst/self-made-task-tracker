@@ -44,7 +44,7 @@ const Main = () => {
 
     
   return (
-    <main>
+    <main id="main">
 
         <section className="toDoCompleted">
             <h3>No. of tasks to do: {parentTasksToDo}</h3>
