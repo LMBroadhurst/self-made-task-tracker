@@ -47,13 +47,13 @@ const Main = () => {
     const [tasksCompleted, setTasksCompleted] = useState(0);
     const [parentTasksToDo, setParentTasksToDo] = useState(0);
     
-    const completedTaskUpdateCounter = () => {
-        setTasksCompleted(tasksCompleted + 1);
-    };
+    // const completedTaskUpdateCounter = () => {
+    //     setTasksCompleted(tasksCompleted + 1);
+    // };
 
-    const removedTaskUpdateCounter = () => {
-        setTasksCompleted(tasksCompleted - 1);
-    };
+    // const removedTaskUpdateCounter = () => {
+    //     setTasksCompleted(tasksCompleted - 1);
+    // };
 
     
   return (
@@ -64,9 +64,17 @@ const Main = () => {
             <h3>No. of tasks completed: {tasksCompleted}</h3>
         </section>
 
-        {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask}/> : "No tasks left 🥳🎉"}
+        {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask}/> : 
+        <section className="noTasks">
+            <p>No tasks left 🥳🎉</p>
+            <p>Use the form below to add tasks 💪</p>
+        </section>}
 
-        <AddTask onAdd={addTask} setParentTasksToDo={setParentTasksToDo}  />
+        <section>
+            {<AddTask onAdd={addTask} setParentTasksToDo={setParentTasksToDo} />}
+        </section>
+
+        
 
     </main>
   )
