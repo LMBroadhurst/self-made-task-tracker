@@ -3,10 +3,11 @@ import { useState } from "react";
 import AddTask from "./AddTask/AddTask";
 // import Tasks from "./Tasks/Tasks.js";
 
-const Main = (props) => {
+const Main = () => {
 
     const [tasksCompleted, setTasksCompleted] = useState(0);
-
+    const [parentTasksToDo, setParentTasksToDo] = useState(0);
+    
     const completedTaskUpdateCounter = () => {
         setTasksCompleted(tasksCompleted + 1);
     };
@@ -16,7 +17,7 @@ const Main = (props) => {
     <main>
 
         <section className="toDoCompleted">
-            <h3>No. of tasks to do: {}</h3>
+            <h3>No. of tasks to do: {parentTasksToDo}</h3>
             <h3>No. of tasks completed: {tasksCompleted}</h3>
         </section>
 
@@ -28,7 +29,7 @@ const Main = (props) => {
                     <p>Priority: High</p>
                 </div>
                 <div>
-                    <button onClick={ completedTaskUpdateCounter}>✅</button>
+                    <button onClick={ completedTaskUpdateCounter }>✅</button>
                     <button>❌</button>
                 </div>
             </section>
@@ -58,7 +59,7 @@ const Main = (props) => {
             </section>
         </section>
 
-        <AddTask  />
+        <AddTask setParentTasksToDo={setParentTasksToDo}  />
 
     </main>
   )

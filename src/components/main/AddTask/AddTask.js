@@ -1,44 +1,48 @@
 import { useState } from "react";
 import "./AddTask.css";
 import "../Main.js";
+// import Main from "../Main.js";
 
 
-const AddTask = (props) => {
+const AddTask = ( {setParentTasksToDo} ) => {
 
   const [text, setText] = useState('');
   const [date, setDate] = useState('');
   const [priority, setPriority] = useState('');
   const [tasksToDo, setTasksToDo] = useState(0);
 
-  const tasksToDoUpdateCounter = () => {
+  const taskToDoUpdateCounter = () => {
     setTasksToDo(tasksToDo + 1);
+    setParentTasksToDo(tasksToDo);
+    console.log(tasksToDo);
+};
+
+    
+  const onSubmit = (e) => {
+      e.preventDefault()
+  
+      if (!text) {
+          alert('Please add a task')
+          return
+      }
+
+      if (!date) {
+          alert('Please add the day')
+          return
+      }
+
+      if (!priority) {
+          alert('Please add the task priority')
+          return
+      }
+
+      // console.log(createTask(text, date, priority));
+  
+      setText('')
+      setDate('')
+      setPriority('')
+
   }
-    
-    const onSubmit = (e) => {
-        e.preventDefault()
-    
-        if (!text) {
-            alert('Please add a task')
-            return
-        }
-
-        if (!date) {
-            alert('Please add the day')
-            return
-        }
-
-        if (!priority) {
-            alert('Please add the task priority')
-            return
-        }
-
-        // console.log(createTask(text, date, priority));
-    
-        setText('')
-        setDate('')
-        setPriority('')
-
-    }
 
   return (
     <form className='add-form' onSubmit={onSubmit}>
@@ -74,7 +78,7 @@ const AddTask = (props) => {
       </div>
 
       <input type='submit' value='✅' className='btn'
-      onClick={tasksToDoUpdateCounter}/>
+      onClick={ taskToDoUpdateCounter }/>
     </form>
   )
 
