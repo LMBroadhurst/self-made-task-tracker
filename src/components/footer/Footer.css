@@ -1,0 +1,18 @@
+footer {
+    background-color: lightblue;
+    border-radius: 0.5rem;
+    font-size: 1,6rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+footer > h5, footer > nav {
+    padding: 1rem;
+}
+
+nav > ul > li > a {
+    text-decoration: none;
+    color: black;
+}

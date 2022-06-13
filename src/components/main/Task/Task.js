@@ -1,4 +1,9 @@
 const Task = ({ task, onDelete }) => {
+
+    const increaseTasksCompleted = () => {
+
+    }
+
     return (
         <section className="task">
             <div className="taskDescription">
@@ -7,7 +12,7 @@ const Task = ({ task, onDelete }) => {
                 <p>Priority: {task.priority}</p>
             </div>
             <div>
-                <button>✅</button>
+                <button onClick={ increaseTasksCompleted}>✅</button>
                 <button onClick={ () =>  onDelete(task.id)}>❌</button>
             </div>
         </section>

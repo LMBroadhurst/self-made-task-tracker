@@ -5,22 +5,7 @@ import Tasks from "./Tasks/Tasks.js";
 
 const Main = () => {
 
-    const [tasks, setTasks] = useState([
-        {
-            id: 1,
-            text: "Walk the dog",
-            date: "Yesterday",
-            priority: "High",
-        },
-        {
-            id: 2,
-            text: "Write JSX",
-            date: "NOW!",
-            priority: "High x2",
-        }
-    ]);
-
-
+    const [tasks, setTasks] = useState([]);
 
     // Add Task
 
@@ -31,8 +16,6 @@ const Main = () => {
         setTasks( [...tasks, newTask] );
     }
 
-
-
     // Delete Task
 
     const deleteTask = (id) => {
@@ -41,19 +24,22 @@ const Main = () => {
     }
 
 
-
     // Easier Stuff
 
-    const [tasksCompleted, setTasksCompleted] = useState(0);
+    const [parentTasksCompleted, setParentTasksCompleted] = useState(0);
     const [parentTasksToDo, setParentTasksToDo] = useState(0);
     
-    // const completedTaskUpdateCounter = () => {
-    //     setTasksCompleted(tasksCompleted + 1);
-    // };
+    const completedTaskUpdateCounter = () => {
+        setParentTasksCompleted(parentTasksCompleted + 1);
+    };
 
-    // const removedTaskUpdateCounter = () => {
-    //     setTasksCompleted(tasksCompleted - 1);
-    // };
+    const addedTaskUpdateCounter = () => {
+        setParentTasksCompleted(parentTasksCompleted + 1);
+    };
+
+    const removedTaskUpdateCounter = () => {
+        setParentTasksCompleted(parentTasksCompleted - 1);
+    };
 
     
   return (
@@ -61,7 +47,7 @@ const Main = () => {
 
         <section className="toDoCompleted">
             <h3>No. of tasks to do: {parentTasksToDo}</h3>
-            <h3>No. of tasks completed: {tasksCompleted}</h3>
+            <h3>No. of tasks completed: {parentTasksCompleted}</h3>
         </section>
 
         {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask}/> : 
@@ -73,8 +59,6 @@ const Main = () => {
         <section>
             {<AddTask onAdd={addTask} setParentTasksToDo={setParentTasksToDo} />}
         </section>
-
-        
 
     </main>
   )
