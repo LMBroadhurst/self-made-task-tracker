@@ -1,16 +1,23 @@
 import "./Main.css";
-import Tasks from "./Tasks/Tasks.js";
+import { useState } from "react";
+import AddTask from "./AddTask/AddTask";
+// import Tasks from "./Tasks/Tasks.js";
 
-const Main = () => {
+const Main = (props) => {
 
-    let taskNumberStart = 0;
+    const [tasksCompleted, setTasksCompleted] = useState(0);
 
+    const completedTaskUpdateCounter = () => {
+        setTasksCompleted(tasksCompleted + 1);
+    };
+
+    
   return (
     <main>
 
         <section className="toDoCompleted">
-            <h3>No. of tasks to do: {taskNumberStart}</h3>
-            <h3>No. of tasks completed: {taskNumberStart}</h3>
+            <h3>No. of tasks to do: {}</h3>
+            <h3>No. of tasks completed: {tasksCompleted}</h3>
         </section>
 
         <section>
@@ -21,7 +28,7 @@ const Main = () => {
                     <p>Priority: High</p>
                 </div>
                 <div>
-                    <button>✅</button>
+                    <button onClick={ completedTaskUpdateCounter}>✅</button>
                     <button>❌</button>
                 </div>
             </section>
@@ -50,6 +57,8 @@ const Main = () => {
                 </div>
             </section>
         </section>
+
+        <AddTask  />
 
     </main>
   )

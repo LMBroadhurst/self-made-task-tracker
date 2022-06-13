@@ -1,11 +1,18 @@
 import { useState } from "react";
 import "./AddTask.css";
+import "../Main.js";
 
-const AddTask = ({ createTask }) => {
 
-    const [text, setText] = useState('');
-    const [date, setDate] = useState('');
-    const [priority, setPriority] = useState('');
+const AddTask = (props) => {
+
+  const [text, setText] = useState('');
+  const [date, setDate] = useState('');
+  const [priority, setPriority] = useState('');
+  const [tasksToDo, setTasksToDo] = useState(0);
+
+  const tasksToDoUpdateCounter = () => {
+    setTasksToDo(tasksToDo + 1);
+  }
     
     const onSubmit = (e) => {
         e.preventDefault()
@@ -25,7 +32,7 @@ const AddTask = ({ createTask }) => {
             return
         }
 
-        console.log(createTask(text, date, priority));
+        // console.log(createTask(text, date, priority));
     
         setText('')
         setDate('')
@@ -66,7 +73,8 @@ const AddTask = ({ createTask }) => {
         />
       </div>
 
-      <input type='submit' value='✅' className='btn' />
+      <input type='submit' value='✅' className='btn'
+      onClick={tasksToDoUpdateCounter}/>
     </form>
   )
 
