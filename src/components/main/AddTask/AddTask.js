@@ -36,7 +36,7 @@ const AddTask = ( {setParentTasksToDo} ) => {
           return
       }
 
-      // console.log(createTask(text, date, priority));
+      // onAdd(text, date, priority);
   
       setText('')
       setDate('')
