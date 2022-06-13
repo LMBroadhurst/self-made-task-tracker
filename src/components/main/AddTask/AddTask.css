@@ -1,0 +1,29 @@
+form {
+    background-color: lightblue;
+    border-radius: 1rem;
+    padding: 2rem 1rem;
+    font-size: 2rem;
+
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.form-control {
+    background-color: lightgoldenrodyellow;
+    padding: 1rem;
+    border-radius: 1rem;
+
+    display: flex;
+    justify-content: row-reverse;
+}
+
+.form-control > label, .form-control > input {
+    margin: 0rem 1rem;
+}
+
+.btn {
+    font-size: 2.5rem;
+    border: 0px;
+    background-color: transparent;
+}

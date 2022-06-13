@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./AddTask.css";
 
-const AddTask = ({ onAdd }) => {
+const AddTask = ({ createTask }) => {
 
     const [text, setText] = useState('');
     const [date, setDate] = useState('');
@@ -24,12 +24,13 @@ const AddTask = ({ onAdd }) => {
             alert('Please add the task priority')
             return
         }
-    
-        onAdd({ text, date, priority })
+
+        console.log(createTask(text, date, priority));
     
         setText('')
         setDate('')
-        setPriority(false)
+        setPriority('')
+
     }
 
   return (
