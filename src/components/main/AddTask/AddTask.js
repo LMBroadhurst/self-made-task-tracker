@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./AddTask.css";
 import "../Main.js";
-// import Main from "../Main.js";
 
 
 const AddTask = ( {onAdd, setParentTasksToDo} ) => {
@@ -12,9 +11,12 @@ const AddTask = ( {onAdd, setParentTasksToDo} ) => {
   const [tasksToDo, setTasksToDo] = useState(0);
 
   const taskToDoUpdateCounter = () => {
-    setTasksToDo(tasksToDo + 1);
-    setParentTasksToDo(tasksToDo);
-    console.log(tasksToDo);
+
+    if (text && date && priority) {
+      setTasksToDo(tasksToDo + 1);
+      setParentTasksToDo(tasksToDo);
+      console.log(tasksToDo);
+    }
 };
 
     
@@ -81,9 +83,11 @@ const AddTask = ( {onAdd, setParentTasksToDo} ) => {
         /> */}
 
         <select id="priorities"
+        placeholder="Priority"
         value={priority}
         onChange={(e) => setPriority(e.currentTarget.value)}
         >
+          <option id="placeholderOption" value="" disabled hidden>Specify priority strength</option>
           <option value="high">High</option>
           <option value="medium">Medium</option>
           <option value="low">Low</option>

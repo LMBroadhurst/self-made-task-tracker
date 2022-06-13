@@ -29,17 +29,18 @@ const Main = () => {
     const [parentTasksCompleted, setParentTasksCompleted] = useState(0);
     const [parentTasksToDo, setParentTasksToDo] = useState(0);
     
-    const completedTaskUpdateCounter = () => {
-        setParentTasksCompleted(parentTasksCompleted + 1);
-    };
+    
+    // const completedTaskUpdateCounter = () => {
+    //     setParentTasksCompleted(parentTasksCompleted + 1);
+    // };
 
-    const addedTaskUpdateCounter = () => {
-        setParentTasksCompleted(parentTasksCompleted + 1);
-    };
+    // const addedTaskUpdateCounter = () => {
+    //     setParentTasksCompleted(parentTasksCompleted + 1);
+    // };
 
-    const removedTaskUpdateCounter = () => {
-        setParentTasksCompleted(parentTasksCompleted - 1);
-    };
+    // const removedTaskUpdateCounter = () => {
+    //     setParentTasksCompleted(parentTasksCompleted - 1);
+    // };
 
     
   return (
