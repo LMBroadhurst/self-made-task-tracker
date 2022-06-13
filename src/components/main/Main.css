@@ -19,7 +19,7 @@ main {
     margin: 1rem 0rem;
 }
 
-.dummyTask {
+.dummyTask, .task {
     padding: 1rem 2rem;
     margin: 1rem 0rem;
     border-radius: 0.5rem;
@@ -32,18 +32,18 @@ main {
     align-items: center;
 }
 
-.dummyTask > div > button {
+.dummyTask > div > button, .task > div > button {
     margin: 1rem;
     font-size: 2.5rem;
     border: 0px;
     background-color: transparent;
 }
 
-.dummyTask > div > p {
+.dummyTask > div > p, .task > div > p {
     padding: 0.5rem 0rem;
 }
 
-.dummyTask > div > p + p + p, .dummyTask > div > p + p  {
+.dummyTask > div > p + p + p, .dummyTask > div > p + p, .task > div > p + p + p, .task > div > p + p  {
     font-size: 1.6rem;
 }
 

@@ -18,8 +18,31 @@ const Main = () => {
             date: "NOW!",
             priority: "High x2",
         }
-    ]
-)
+    ]);
+
+
+
+    // Add Task
+
+    const addTask = (task) => {
+        const id = (Math.floor(Math.random() * 10000) + 1);
+        const newTask = {id, ...task};
+
+        setTasks( [...tasks, newTask] );
+    }
+
+
+
+    // Delete Task
+
+    const deleteTask = (id) => {
+        console.log('delete', id);
+        setTasks(tasks.filter( (task) => task.id !== id ));
+    }
+
+
+
+    // Easier Stuff
 
     const [tasksCompleted, setTasksCompleted] = useState(0);
     const [parentTasksToDo, setParentTasksToDo] = useState(0);
@@ -41,25 +64,9 @@ const Main = () => {
             <h3>No. of tasks completed: {tasksCompleted}</h3>
         </section>
 
-        <section>
+        {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask}/> : "No tasks left 🥳🎉"}
 
-            <section className="dummyTask task1">
-                <div>
-                    <p>Enter task description here</p>
-                    <p>Date added: xx/yy/zz</p>
-                    <p>Priority: High</p>
-                </div>
-                <div>
-                    <button onClick={ completedTaskUpdateCounter }>✅</button>
-                    <button onClick={ removedTaskUpdateCounter }>❌</button>
-                </div>
-            </section>
-
-        </section>
-
-        <Tasks tasks={tasks}/>
-
-        <AddTask setParentTasksToDo={setParentTasksToDo}  />
+        <AddTask onAdd={addTask} setParentTasksToDo={setParentTasksToDo}  />
 
     </main>
   )

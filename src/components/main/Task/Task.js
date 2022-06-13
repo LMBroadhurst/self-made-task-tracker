@@ -1,4 +1,4 @@
-const Task = ({ task }) => {
+const Task = ({ task, onDelete }) => {
     return (
         <section className="task">
             <div>
@@ -8,7 +8,7 @@ const Task = ({ task }) => {
             </div>
             <div>
                 <button>✅</button>
-                <button>❌</button>
+                <button onClick={ () =>  onDelete(task.id)}>❌</button>
             </div>
         </section>
     )

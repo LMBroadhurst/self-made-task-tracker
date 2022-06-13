@@ -4,7 +4,7 @@ import "../Main.js";
 // import Main from "../Main.js";
 
 
-const AddTask = ( {setParentTasksToDo} ) => {
+const AddTask = ( {onAdd, setParentTasksToDo} ) => {
 
   const [text, setText] = useState('');
   const [date, setDate] = useState('');
@@ -19,7 +19,7 @@ const AddTask = ( {setParentTasksToDo} ) => {
 
     
   const onSubmit = (e) => {
-      e.preventDefault()
+      e.preventDefault();
   
       if (!text) {
           alert('Please add a task')
@@ -36,12 +36,14 @@ const AddTask = ( {setParentTasksToDo} ) => {
           return
       }
 
-      // onAdd(text, date, priority);
+      onAdd({text, date, priority});
   
+
+      // Clears the form
+      
       setText('')
       setDate('')
       setPriority('')
-
   }
 
   return (
