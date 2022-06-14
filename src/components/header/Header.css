@@ -33,7 +33,8 @@ h2 {
 }
 
 .bold {
-    font-weight: 600;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 .best {
