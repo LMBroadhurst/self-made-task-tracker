@@ -6,8 +6,8 @@ const Header = () => {
     <header>
         <div>
             <div>
-                <h1 id="h1">Task Tracker</h1>
-                <h2>The best task tracker on the interwebs!</h2>
+                <h1 id="h1">Reactive Task Tracker</h1>
+                <h2>The <span>worst</span> <span class="best">best</span> task tracker on the <span>internet</span> <span className="bold">interwebs!</span></h2>
             </div>
 
             <Navbar />

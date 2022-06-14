@@ -15,7 +15,28 @@ header > div {
     background-color: lightblue;
 }
 
-h1 + h2 {
+h1 {
+    font-size: 2.6rem;
+}
+
+h2 {
     font-size: 2rem;
 }
 
+
+span {
+    text-decoration: wavy line-through;
+}
+
+h2 {
+    margin-top: 1rem;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.best {
+    font-style: italic;
+    text-decoration: underline;
+}
