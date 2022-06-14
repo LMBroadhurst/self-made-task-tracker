@@ -1,16 +1,19 @@
-import "../Main.js"
+import "../Main.js";
 
-const Task = ({ task, onDelete }) => {
+const Task = ({ task, onDelete, props }) => {
 
     const taskCompletedClick = () => {
 
         onDelete(task.id)
+        props.setParentTasksCompleted(props.parentTasksCompleted + 1)
+        console.log(props.parentTasksCompleted)
 
     }
 
     const clickXonTask = () => {
 
         onDelete(task.id)
+        props.setParentTasksToDo(props.parentTasksToDo - 1)
 
     };
 
