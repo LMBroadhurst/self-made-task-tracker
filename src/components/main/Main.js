@@ -26,23 +26,36 @@ const Main = () => {
 
     // Easier Stuff
 
-    const [parentTasksToDo, setParentTasksToDo] = useState(0);
-    const [parentTasksCompleted, setParentTasksCompleted] = useState(0);
+    const [tasksToDo, setTasksToDo] = useState(0);
+    const [tasksCompleted, setTasksCompleted] = useState(0);
+
+    const increaseTasksToDo = () => {
+        setTasksToDo(tasksToDo + 1);
+        console.log(tasksToDo);
+    }
+
+    const decreaseTasksToDo = () => {
+        setTasksToDo(tasksCompleted - 1);
+        console.log(tasksCompleted);
+    }
+
+    const increaseTasksCompleted = () => {
+        setTasksCompleted(tasksCompleted + 1);
+        console.log(tasksCompleted);
+    }
 
   return (
     <main id="main">
 
         <section className="toDoCompleted">
-            <h3>No. of tasks to do: {parentTasksToDo}</h3>
-            <h3>No. of tasks completed: {parentTasksCompleted}</h3>
+            <h3>No. of tasks to do: {tasksToDo}</h3>
+            <h3>No. of tasks completed: {tasksCompleted}</h3>
         </section>
 
         {tasks.length > 0 ? <Tasks tasks={tasks} 
                                 onDelete={deleteTask}
-                                setParentTasksToDo={setParentTasksToDo}
-                                parentTasksToDo={parentTasksToDo}
-                                setParentTasksCompleted={setParentTasksCompleted}
-                                parentTasksCompleted={parentTasksCompleted}
+                                decreaseTasksToDo={decreaseTasksToDo}
+                                increaseTasksCompleted={increaseTasksCompleted}
                             /> : 
         <section className="noTasks">
             <p>No tasks left 🥳🎉</p>
@@ -50,7 +63,7 @@ const Main = () => {
         </section>}
 
         <section>
-            {<AddTask onAdd={addTask} setParentTasksToDo={setParentTasksToDo} />}
+            {<AddTask onAdd={addTask} increaseTasksToDo={increaseTasksToDo} />}
         </section>
 
     </main>

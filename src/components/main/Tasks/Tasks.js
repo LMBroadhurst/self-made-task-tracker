@@ -1,6 +1,6 @@
 import Task from "../Task/Task.js";
 
-const Tasks = ( { tasks, onDelete, props }) => {
+const Tasks = ( { tasks, onDelete, increaseTasksToDo, decreaseTasksToDo, increaseTasksCompleted }) => {
 
   
   return (
@@ -8,10 +8,9 @@ const Tasks = ( { tasks, onDelete, props }) => {
         {tasks.map( (task) => (
             <Task key={task.id} task={task} 
             onDelete={onDelete}
-            setParentTasksToDo={props.setParentTasksToDo}
-            parentTasksToDo={props.parentTasksToDo}
-            setParentTasksCompleted={props.setParentTasksCompleted}
-            parentTasksCompleted={props.parentTasksCompleted}
+            increaseTasksToDo={increaseTasksToDo}
+            decreaseTasksToDo={decreaseTasksToDo}
+            increaseTasksCompleted={increaseTasksCompleted}
             />
         ))}
     </>

@@ -3,22 +3,11 @@ import "./AddTask.css";
 import "../Main.js";
 
 
-const AddTask = ( {onAdd, setParentTasksToDo} ) => {
+const AddTask = ( {onAdd, increaseTasksToDo} ) => {
 
   const [text, setText] = useState('');
   const [date, setDate] = useState('');
   const [priority, setPriority] = useState('');
-  const [tasksToDo, setTasksToDo] = useState(1);
-
-  const addTaskSuccessfully = () => {
-
-    if (text && date && priority) {
-      setTasksToDo(tasksToDo + 1);
-      setParentTasksToDo(tasksToDo);
-      console.log(tasksToDo);
-    }
-
-};
 
     
   const onSubmit = (e) => {
@@ -47,6 +36,10 @@ const AddTask = ( {onAdd, setParentTasksToDo} ) => {
       setText('')
       setDate('')
       setPriority('')
+
+      if (text && date && priority) {
+        increaseTasksToDo()
+      }
   }
 
   return (
@@ -97,8 +90,7 @@ const AddTask = ( {onAdd, setParentTasksToDo} ) => {
 
       </div>
 
-      <input type='submit' value='✅' className='btn'
-      onClick={ addTaskSuccessfully }/>
+      <input type='submit' value='✅' className='btn'/>
     </form>
   )
 
