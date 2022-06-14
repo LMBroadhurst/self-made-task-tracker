@@ -63,3 +63,11 @@ main {
     padding-top: 1rem;
 }
 
+.green {
+    background-color: lightgreen;
+}
+
+.red {
+    background-color: rgb(235, 87, 87);
+}
+

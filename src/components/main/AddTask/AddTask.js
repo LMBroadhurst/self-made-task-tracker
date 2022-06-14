@@ -28,9 +28,9 @@ const AddTask = ( {onAdd, increaseTasksToDo} ) => {
           return
       }
 
+
       onAdd({text, date, priority});
   
-
       // Clears the form
       
       setText('')

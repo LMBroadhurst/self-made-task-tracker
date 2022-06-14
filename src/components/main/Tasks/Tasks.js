@@ -6,7 +6,7 @@ const Tasks = ( { tasks, onDelete, increaseTasksToDo, decreaseTasksToDo, increas
   return (
     <>
         {tasks.map( (task) => (
-            <Task key={task.id} task={task} 
+            <Task key={task.id} task={task}
             onDelete={onDelete}
             increaseTasksToDo={increaseTasksToDo}
             decreaseTasksToDo={decreaseTasksToDo}

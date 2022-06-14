@@ -24,7 +24,7 @@ const Main = () => {
     }
 
 
-    // Easier Stuff
+    // Not Easier Stuff
 
     const [tasksToDo, setTasksToDo] = useState(0);
     const [tasksCompleted, setTasksCompleted] = useState(0);
@@ -35,8 +35,8 @@ const Main = () => {
     }
 
     const decreaseTasksToDo = () => {
-        setTasksToDo(tasksCompleted - 1);
-        console.log(tasksCompleted);
+        setTasksToDo(tasksToDo - 1);
+        console.log(tasksToDo);
     }
 
     const increaseTasksCompleted = () => {
